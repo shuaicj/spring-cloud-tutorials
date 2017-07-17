@@ -16,6 +16,7 @@
 
     <modules>
         <module>tt01-config-native</module>
+        <module>tt02-config-git</module>
     </modules>
 
     <properties>

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: tt02-hello
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true
+
