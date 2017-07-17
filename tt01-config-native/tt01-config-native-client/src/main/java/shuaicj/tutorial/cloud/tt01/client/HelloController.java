@@ -15,11 +15,11 @@ public class HelloController {
     @Value("${server.port}")
     private int port;
 
-    @Value("${tt01.hello.author}")
-    private String author;
+    @Value("${hello.message}")
+    private String message;
 
     @GetMapping("/hello")
     public String hello() {
-        return "port: " + port + ", author: " + author + "\n";
+        return "port: " + port + ", message: " + message + "\n";
     }
 }

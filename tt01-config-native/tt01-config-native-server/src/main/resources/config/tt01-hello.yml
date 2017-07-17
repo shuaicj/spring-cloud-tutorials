@@ -1,6 +1,5 @@
 server:
   port: 8080
 
-tt01:
-  hello:
-    author: shuaicj
+hello:
+  message: Hello, I'm tt01!
