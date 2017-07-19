@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: tt04-hello
+  cloud:
+    consul:
+      host: localhost
+      port: 8500

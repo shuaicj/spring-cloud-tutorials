@@ -18,6 +18,7 @@
         <module>tt01-config-native</module>
         <module>tt02-config-git</module>
         <module>tt03-config-zookeeper</module>
+        <module>tt04-config-consul</module>
     </modules>
 
     <properties>

@@ -2,4 +2,4 @@ server:
   port: 8080
 
 hello:
-  message: Hello, I'm tt01!
+  message: Hello, I'm tt01.
