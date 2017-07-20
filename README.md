@@ -43,7 +43,7 @@ Tutorials for learning Spring Cloud.
         > Now a consul agent is running at `localhost:8500`.
     - Create configurations in consul:
         - `$ consul kv put config/tt04-hello/server/port 8080`
-        - `$ consul kv put config/tt04-hello/hello/message "Hello, I\'m tt04."`
+        - `$ consul kv put config/tt04-hello/hello/message "Hello, I'm tt04."`
     - Run
         - `$ cd tt04-config-consul && mvn spring-boot:run`
     - Verify
