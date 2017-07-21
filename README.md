@@ -2,19 +2,21 @@
 
 Tutorials for learning Spring Cloud.
 
+#### Compile
+`$ mvn package`
+
 #### Modules
-> Note: All terminal commands are assuming that you are in the project top directory.
 - **tt01-config-native** - Configuration with native mode of [Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/)
     - Run
-        - `$ cd tt01-config-native/tt01-config-native-server && mvn spring-boot:run`
-        - `$ cd tt01-config-native/tt01-config-native-client && mvn spring-boot:run`
+        - `$ java -jar tt01-config-native/tt01-config-native-server/target/tt01-config-native-server-1.0.0.jar`
+        - `$ java -jar tt01-config-native/tt01-config-native-client/target/tt01-config-native-client-1.0.0.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt01.`
 
 - **tt02-config-git** - Configuration with git mode of [Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/)
     - Run
-        - `$ cd tt02-config-git/tt02-config-git-server && mvn spring-boot:run`
-        - `$ cd tt02-config-git/tt02-config-git-client && mvn spring-boot:run`
+        - `$ java -jar tt02-config-git/tt02-config-git-server/target/tt02-config-git-server-1.0.0.jar`
+        - `$ java -jar tt02-config-git/tt02-config-git-client/target/tt02-config-git-client-1.0.0.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt02.`
  
@@ -32,19 +34,19 @@ Tutorials for learning Spring Cloud.
         - `zk$ create /config/tt03-hello/hello ''`
         - `zk$ create /config/tt03-hello/hello/message "Hello, I'm tt03."`
     - Run
-        - `$ cd tt03-config-zookeeper && mvn spring-boot:run`
+        - `$ java -jar tt03-config-zookeeper/target/tt03-config-zookeeper-1.0.0.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt03.`
 
 - **tt04-config-consul** - Configuration with [Spring Cloud Consul](http://cloud.spring.io/spring-cloud-consul/)
     - Install and start [Consul](https://www.consul.io). If using [Homebrew](https://brew.sh/) on Mac:
         - `$ brew install consul`
-        - `consul agent -dev -advertise 127.0.0.1`
+        - `$ consul agent -dev -advertise 127.0.0.1`
         > Now a consul agent is running at `localhost:8500`.
     - Create configurations in consul:
         - `$ consul kv put config/tt04-hello/server/port 8080`
         - `$ consul kv put config/tt04-hello/hello/message "Hello, I'm tt04."`
     - Run
-        - `$ cd tt04-config-consul && mvn spring-boot:run`
+        - `$ java -jar tt04-config-consul/target/tt04-config-consul-1.0.0.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt04.`
