@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>shuaicj.tutorial.cloud</groupId>
-    <artifactId>tutorial-cloud-parent</artifactId>
+    <artifactId>cloud-tutorial-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
