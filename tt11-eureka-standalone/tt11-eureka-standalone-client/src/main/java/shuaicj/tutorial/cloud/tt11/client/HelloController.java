@@ -1,6 +1,8 @@
 package shuaicj.tutorial.cloud.tt11.client;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +28,11 @@ public class HelloController {
     private DiscoveryClient discoveryClient;
 
     @GetMapping("/hello")
-    public List<ServiceInstance> hello() {
-        return discoveryClient.getInstances(name);
+    public Map<String, List<ServiceInstance>> hello() {
+        Map<String, List<ServiceInstance>> map = new HashMap<>();
+        for (String service : discoveryClient.getServices()) {
+            map.put(service, discoveryClient.getInstances(service));
+        }
+        return map;
     }
 }
