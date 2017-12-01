@@ -76,3 +76,14 @@ Tutorials for learning Spring Cloud.
     - Verify
         - `$ curl http://localhost:8080/hello?name=abc` should print `Hello ABC!`.
         - `$ curl http://localhost:8080/hello?name=a` should print `Hello A [FALLBACK]!`.
+ 
+- **tt22-hystrix-dashboard** - Dashboard of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt22*/*server/target/*.jar`
+        - `$ java -jar tt22*/*client/target/*.jar`
+    - Verify
+        - Open `http://localhost:8081/hystrix` in browser and you will see the dashboard.
+          Input `http://localhost:8080/hystrix.stream` and click `Monitor Stream` button.
+        - Do the following two `curl` randomly and watch the changes on dashboard.
+            - `$ curl http://localhost:8080/hello?name=abc`
+            - `$ curl http://localhost:8080/hello?name=a`
