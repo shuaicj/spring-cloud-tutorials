@@ -20,6 +20,7 @@
         <module>tt03-config-zookeeper</module>
         <module>tt04-config-consul</module>
         <module>tt11-eureka-standalone</module>
+        <module>tt12-eureka-ha</module>
     </modules>
 
     <properties>

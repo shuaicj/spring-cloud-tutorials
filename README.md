@@ -3,20 +3,20 @@
 Tutorials for learning Spring Cloud.
 
 #### Compile
-`$ mvn package`
+`$ mvn clean package`
 
 #### Modules
 - **tt01-config-native** - Configuration with native mode of [Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/)
     - Run
-        - `$ java -jar tt01-config-native/tt01-config-native-server/target/tt01-config-native-server-1.0.0.jar`
-        - `$ java -jar tt01-config-native/tt01-config-native-client/target/tt01-config-native-client-1.0.0.jar`
+        - `$ java -jar tt01*/*server/target/*.jar`
+        - `$ java -jar tt01*/*client/target/*.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt01.`
 
 - **tt02-config-git** - Configuration with git mode of [Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/)
     - Run
-        - `$ java -jar tt02-config-git/tt02-config-git-server/target/tt02-config-git-server-1.0.0.jar`
-        - `$ java -jar tt02-config-git/tt02-config-git-client/target/tt02-config-git-client-1.0.0.jar`
+        - `$ java -jar tt02*/*server/target/*.jar`
+        - `$ java -jar tt02*/*client/target/*.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt02.`
  
@@ -34,7 +34,7 @@ Tutorials for learning Spring Cloud.
         - `zk$ create /config/tt03-hello/hello ''`
         - `zk$ create /config/tt03-hello/hello/message "Hello, I'm tt03."`
     - Run
-        - `$ java -jar tt03-config-zookeeper/target/tt03-config-zookeeper-1.0.0.jar`
+        - `$ java -jar tt03*/target/*.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt03.`
 
@@ -47,15 +47,25 @@ Tutorials for learning Spring Cloud.
         - `$ consul kv put config/tt04-hello/server/port 8080`
         - `$ consul kv put config/tt04-hello/hello/message "Hello, I'm tt04."`
     - Run
-        - `$ java -jar tt04-config-consul/target/tt04-config-consul-1.0.0.jar`
+        - `$ java -jar tt04*/target/*.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt04.`
  
 - **tt11-eureka-standalone** - Standalone mode of [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
-        - `$ java -jar tt11-eureka-standalone/tt11-eureka-standalone-server/target/tt01-eureka-standalone-server-1.0.0.jar`
-        - `$ java -jar tt11-eureka-standalone/tt11-eureka-standalone-client/target/tt01-eureka-standalone-client-1.0.0.jar`
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt11*/*client/target/*.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print out instance info.
         - Open `http://localhost:8761` in browser to check eureka portal.
+        - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
+ 
+- **tt12-eureka-ha** - HA mode of [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt12*/*server/target/*.jar --spring.profiles.active=peer1`
+        - `$ java -jar tt12*/*server/target/*.jar --spring.profiles.active=peer2`
+        - `$ java -jar tt12*/*client/target/*.jar`
+    - Verify
+        - `$ curl http://localhost:8080/hello` should print out instance info.
+        - Open `http://localhost:8761` or `http://localhost:8762` in browser to check eureka portal.
         - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
