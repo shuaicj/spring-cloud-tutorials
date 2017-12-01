@@ -21,6 +21,7 @@
         <module>tt04-config-consul</module>
         <module>tt11-eureka-standalone</module>
         <module>tt12-eureka-ha</module>
+        <module>tt21-hystrix</module>
     </modules>
 
     <properties>

@@ -69,3 +69,10 @@ Tutorials for learning Spring Cloud.
         - `$ curl http://localhost:8080/hello` should print out instance info.
         - Open `http://localhost:8761` or `http://localhost:8762` in browser to check eureka portal.
         - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
+ 
+- **tt21-hystrix** - Simple usage of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt21*/target/*.jar`
+    - Verify
+        - `$ curl http://localhost:8080/hello?name=abc` should print `Hello ABC!`.
+        - `$ curl http://localhost:8080/hello?name=a` should print `Hello A [FALLBACK]!`.
