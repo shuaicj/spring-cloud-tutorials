@@ -50,3 +50,12 @@ Tutorials for learning Spring Cloud.
         - `$ java -jar tt04-config-consul/target/tt04-config-consul-1.0.0.jar`
     - Verify
         - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt04.`
+ 
+- **tt11-eureka-standalone** - Standalone mode of [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt11-eureka-standalone/tt11-eureka-standalone-server/target/tt01-eureka-standalone-server-1.0.0.jar`
+        - `$ java -jar tt11-eureka-standalone/tt11-eureka-standalone-client/target/tt01-eureka-standalone-client-1.0.0.jar`
+    - Verify
+        - `$ curl http://localhost:8080/hello` should print out instance info.
+        - Open `http://localhost:8761` in browser to check eureka portal.
+        - Open `http://localhost:8761/eureka/apps` in browser to check registered services.

@@ -19,6 +19,7 @@
         <module>tt02-config-git</module>
         <module>tt03-config-zookeeper</module>
         <module>tt04-config-consul</module>
+        <module>tt11-eureka-standalone</module>
     </modules>
 
     <properties>
