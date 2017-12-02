@@ -23,6 +23,7 @@
         <module>tt12-eureka-ha</module>
         <module>tt21-hystrix</module>
         <module>tt22-hystrix-dashboard</module>
+        <module>tt31-ribbon-resttemplate</module>
     </modules>
 
     <properties>

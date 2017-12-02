@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+hello-service:
+  ribbon:
+    listOfServers: localhost:8081,localhost:8082

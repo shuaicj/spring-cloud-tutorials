@@ -87,3 +87,12 @@ Tutorials for learning Spring Cloud.
         - Do the following two `curl` randomly and watch the changes on dashboard.
             - `$ curl http://localhost:8080/hello?name=abc`
             - `$ curl http://localhost:8080/hello?name=a`
+ 
+- **tt31-ribbon-resttemplate** - RestTemplate and [Spring Cloud Netflix Ribbon](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt31*/*api/target/*.jar --server.port=8081 --hello.message=one`
+        - `$ java -jar tt31*/*api/target/*.jar --server.port=8082 --hello.message=two`
+        - `$ java -jar tt31*/*consumer/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and message `one`, `two` should be printed out by turns.
+            - `$ curl http://localhost:8080/consume`
