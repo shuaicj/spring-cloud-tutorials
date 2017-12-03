@@ -77,6 +77,14 @@ Tutorials for learning Spring Cloud.
         - `$ curl http://localhost:8080/hello?name=abc` should print `Hello ABC!`.
         - `$ curl http://localhost:8080/hello?name=a` should print `Hello A [FALLBACK]!`.
  
+- **tt22-hystrix-timeout** - Timeout of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt22*/*api/target/*.jar`
+        - `$ java -jar tt22*/*consumer/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and `CONSUMER [FALLBACK]` should be printed out randomly.
+            - `$ curl http://localhost:8081/consume`
+ 
 - **tt23-hystrix-dashboard** - Dashboard of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt23*/*server/target/*.jar`

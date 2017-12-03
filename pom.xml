@@ -24,6 +24,7 @@
         <module>tt21-hystrix</module>
         <module>tt23-hystrix-dashboard</module>
         <module>tt31-ribbon-resttemplate</module>
+        <module>tt22-hystrix-timeout</module>
     </modules>
 
     <properties>
