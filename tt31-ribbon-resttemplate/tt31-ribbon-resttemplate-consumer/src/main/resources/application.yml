@@ -1,6 +1,6 @@
 server:
   port: 8080
 
-hello-service:
+tt31-api:
   ribbon:
     listOfServers: localhost:8081,localhost:8082

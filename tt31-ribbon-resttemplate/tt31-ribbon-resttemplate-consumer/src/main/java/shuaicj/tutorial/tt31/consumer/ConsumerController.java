@@ -18,6 +18,6 @@ public class ConsumerController {
 
     @GetMapping("/consume")
     public String consume() {
-        return restTemplate.getForObject("http://hello-service/hello", String.class);
+        return restTemplate.getForObject("http://tt31-api/hello", String.class);
     }
 }
