@@ -34,6 +34,7 @@ public class HelloController {
             return s.toUpperCase();
         }
 
+        @SuppressWarnings("unused")
         String capitalizeFallback(String s) {
             return s.toUpperCase() + " [FALLBACK]";
         }
