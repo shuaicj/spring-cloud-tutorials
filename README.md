@@ -59,6 +59,7 @@ Tutorials for learning Spring Cloud.
         - `$ curl http://localhost:8080/hello` should print out instance info.
         - Open `http://localhost:8761` in browser to check eureka portal.
         - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
 - **tt12-eureka-ha** - HA mode of [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
@@ -69,6 +70,7 @@ Tutorials for learning Spring Cloud.
         - `$ curl http://localhost:8080/hello` should print out instance info.
         - Open `http://localhost:8761` or `http://localhost:8762` in browser to check eureka portal.
         - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
 - **tt21-hystrix** - Simple usage of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
@@ -104,3 +106,14 @@ Tutorials for learning Spring Cloud.
     - Verify
         - Repeat the following `curl` and message `one`, `two` should be printed out by turns.
             - `$ curl http://localhost:8080/consume`
+ 
+- **tt32-ribbon-eureka** - [Spring Cloud Netflix Ribbon](http://cloud.spring.io/spring-cloud-netflix/) with Eureka
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt32*/*api/target/*.jar --server.port=8081 --hello.message=one`
+        - `$ java -jar tt32*/*api/target/*.jar --server.port=8082 --hello.message=two`
+        - `$ java -jar tt32*/*consumer/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and message `one`, `two` should be printed out by turns.
+            - `$ curl http://localhost:8080/consume`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
