@@ -1,16 +1,16 @@
-package shuaicj.tutorial.cloud.tt22.server;
+package shuaicj.tutorial.cloud.tt23.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 /**
- * Hystrix Dashboard.
+ * Spring boot app with hystrix.
  *
  * @author shuaicj 2017/12/01
  */
 @SpringBootApplication
-@EnableHystrixDashboard
+@EnableCircuitBreaker
 public class Application {
 
     public static void main(String[] args) {

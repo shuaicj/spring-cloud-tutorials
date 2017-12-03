@@ -1,4 +1,4 @@
-package shuaicj.tutorial.cloud.tt22.client;
+package shuaicj.tutorial.cloud.tt23.client;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

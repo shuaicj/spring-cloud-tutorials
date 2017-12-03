@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>tt22-hystrix-dashboard-server</module>
-        <module>tt22-hystrix-dashboard-client</module>
+        <module>tt23-hystrix-dashboard-server</module>
+        <module>tt23-hystrix-dashboard-client</module>
     </modules>
 </project>

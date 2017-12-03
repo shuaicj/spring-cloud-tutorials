@@ -23,7 +23,7 @@
 
         <!--
           The spring-boot-starter-actuator is a mandatory dependency here. Actually it's the only difference
-          between module tt22-client and tt21. It will expose /hystrix.stream for dashboard to monitor.
+          between module tt23-client and tt21. It will expose /hystrix.stream for dashboard to monitor.
         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
