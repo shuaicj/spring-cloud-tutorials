@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Value("${hello.message}")
-    private String message;
+    @Value("${hello.id}")
+    private String id;
 
     @GetMapping("/hello")
     public String hello() {
-        return "message: " + message + "\n";
+        return id + " says hello!\n";
     }
 }
