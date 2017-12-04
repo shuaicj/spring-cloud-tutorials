@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+tt41-api:
+  ribbon:
+    listOfServers: localhost:8081,localhost:8082
