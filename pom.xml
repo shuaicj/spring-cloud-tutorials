@@ -26,6 +26,8 @@
         <module>tt23-hystrix-dashboard</module>
         <module>tt31-ribbon-resttemplate</module>
         <module>tt32-ribbon-eureka</module>
+        <module>tt41-feign</module>
+        <module>tt42-feign-hystrix-eureka</module>
     </modules>
 
     <properties>

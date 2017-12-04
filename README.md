@@ -100,20 +100,40 @@ Tutorials for learning Spring Cloud.
  
 - **tt31-ribbon-resttemplate** - RestTemplate and [Spring Cloud Netflix Ribbon](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
-        - `$ java -jar tt31*/*api/target/*.jar --server.port=8081 --hello.message=one`
-        - `$ java -jar tt31*/*api/target/*.jar --server.port=8082 --hello.message=two`
+        - `$ java -jar tt31*/*api/target/*.jar --server.port=8081 --hello.id=server-1`
+        - `$ java -jar tt31*/*api/target/*.jar --server.port=8082 --hello.id=server-2`
         - `$ java -jar tt31*/*consumer/target/*.jar`
     - Verify
-        - Repeat the following `curl` and message `one`, `two` should be printed out by turns.
+        - Repeat the following `curl` and `server-1`, `server-2` should say hello by turns.
             - `$ curl http://localhost:8080/consume`
  
 - **tt32-ribbon-eureka** - [Spring Cloud Netflix Ribbon](http://cloud.spring.io/spring-cloud-netflix/) with Eureka
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
-        - `$ java -jar tt32*/*api/target/*.jar --server.port=8081 --hello.message=one`
-        - `$ java -jar tt32*/*api/target/*.jar --server.port=8082 --hello.message=two`
+        - `$ java -jar tt32*/*api/target/*.jar --server.port=8081 --hello.id=server-1`
+        - `$ java -jar tt32*/*api/target/*.jar --server.port=8082 --hello.id=server-2`
         - `$ java -jar tt32*/*consumer/target/*.jar`
     - Verify
-        - Repeat the following `curl` and message `one`, `two` should be printed out by turns.
+        - Repeat the following `curl` and `server-1`, `server-2` should say hello by turns.
+            - `$ curl http://localhost:8080/consume`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt41-feign** - Simple usage of [Spring Cloud Netflix Feign](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt41*/*api/target/*.jar --server.port=8081 --hello.id=server-1`
+        - `$ java -jar tt41*/*api/target/*.jar --server.port=8082 --hello.id=server-2`
+        - `$ java -jar tt41*/*consumer/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and `server-1`, `server-2` should say hello by turns.
+            - `$ curl http://localhost:8080/consume`
+ 
+- **tt42-feign-hystrix-eureka** - [Spring Cloud Netflix Feign](http://cloud.spring.io/spring-cloud-netflix/) with Hystrix, Eureka
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt42*/*api/target/*.jar --server.port=8081 --hello.id=server-1`
+        - `$ java -jar tt42*/*api/target/*.jar --server.port=8082 --hello.id=server-2`
+        - `$ java -jar tt42*/*consumer/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and hystrix fallback should be triggered randomly.
             - `$ curl http://localhost:8080/consume`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
