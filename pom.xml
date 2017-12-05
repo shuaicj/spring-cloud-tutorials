@@ -28,6 +28,7 @@
         <module>tt32-ribbon-eureka</module>
         <module>tt41-feign</module>
         <module>tt42-feign-hystrix-eureka</module>
+        <module>tt51-turbine</module>
     </modules>
 
     <properties>

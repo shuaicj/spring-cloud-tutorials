@@ -137,3 +137,22 @@ Tutorials for learning Spring Cloud.
         - Repeat the following `curl` and hystrix fallback should be triggered randomly.
             - `$ curl http://localhost:8080/consume`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt51-turbine** - [Spring Cloud Netflix Turbine](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1`
+        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8082 --hello.id=server-2`
+        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8083 --hello.id=server-3`
+        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8084 --hello.id=server-4`
+        - `$ java -jar tt51*/*server/target/*.jar`
+        - `$ java -jar tt23*/*server/target/*.jar --server.port=9090`
+    - Verify
+        - Open `http://localhost:9090/hystrix` in browser and you will see the dashboard.
+          Input `http://localhost:8080/turbine.stream` and click `Monitor Stream` button.
+        - Do the following two `curl` randomly and watch the changes on dashboard.
+            - `$ curl http://localhost:8081/consume`
+            - `$ curl http://localhost:8082/consume`
+            - `$ curl http://localhost:8083/consume`
+            - `$ curl http://localhost:8084/consume`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.

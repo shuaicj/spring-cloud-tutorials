@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tt51-turbine-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+turbine:
+  appConfig: tt51-api-1,tt51-api-2
+  clusterNameExpression: "'default'"
+  combineHostPort: true
