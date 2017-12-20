@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: tt13-config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

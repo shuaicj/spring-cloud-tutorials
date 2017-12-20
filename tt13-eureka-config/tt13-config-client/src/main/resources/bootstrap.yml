@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: tt13-config-client
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: tt13-config-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

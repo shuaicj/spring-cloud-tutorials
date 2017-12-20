@@ -72,6 +72,15 @@ Tutorials for learning Spring Cloud.
         - Open `http://localhost:8761/eureka/apps` in browser to check registered services.
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
+- **tt13-eureka-config** - Register config server to [Spring Cloud Netflix Eureka](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt13*/*eureka-server/target/*.jar`
+        - `$ java -jar tt13*/*config-server/target/*.jar`
+        - `$ java -jar tt13*/*config-client/target/*.jar`
+    - Verify
+        - `$ curl http://localhost:8080/hello` should print `port: 8080, message: Hello, I'm tt13.`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
 - **tt21-hystrix** - Simple usage of [Spring Cloud Netflix Hystrix](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt21*/target/*.jar`
