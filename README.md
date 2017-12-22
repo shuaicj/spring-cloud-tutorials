@@ -150,10 +150,10 @@ Tutorials for learning Spring Cloud.
 - **tt51-turbine** - [Spring Cloud Netflix Turbine](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
-        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1`
-        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8082 --hello.id=server-2`
-        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8083 --hello.id=server-3`
-        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8084 --hello.id=server-4`
+        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
+        - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8082 --hello.id=server-1-2`
+        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8083 --hello.id=server-2-1`
+        - `$ java -jar tt51*/*api-2/target/*.jar --server.port=8084 --hello.id=server-2-2`
         - `$ java -jar tt51*/*server/target/*.jar`
         - `$ java -jar tt23*/*server/target/*.jar --server.port=9090`
     - Verify
@@ -164,4 +164,18 @@ Tutorials for learning Spring Cloud.
             - `$ curl http://localhost:8082/consume`
             - `$ curl http://localhost:8083/consume`
             - `$ curl http://localhost:8084/consume`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt61-zuul** - [Spring Cloud Netflix Zuul](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt61*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
+        - `$ java -jar tt61*/*api-1/target/*.jar --server.port=8082 --hello.id=server-1-2`
+        - `$ java -jar tt61*/*api-2/target/*.jar --server.port=8083 --hello.id=server-2-1`
+        - `$ java -jar tt61*/*api-2/target/*.jar --server.port=8084 --hello.id=server-2-2`
+        - `$ java -jar tt61*/*server/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and each service instance should say hello by turns.
+            - `$ curl http://localhost:8080/api1/hello`
+            - `$ curl http://localhost:8080/api2/hello`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
