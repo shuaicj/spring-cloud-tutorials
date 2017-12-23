@@ -230,6 +230,15 @@ Tutorials for learning Spring Cloud.
           See [doc](http://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/1.3.0.RELEASE/single/spring-cloud-sleuth.html#_features) for more details.
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
+- **tt72-sleuth-feign** - [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/) with Feign
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt72*/*api-1/target/*.jar`
+        - `$ java -jar tt72*/*api-2/target/*.jar`
+        - `$ java -jar tt72*/*api-3/target/*.jar`
+    - Verify
+        - Same as `tt71-sleuth`
+ 
 - **tt73-sleuth-zipkin** - [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/) with [Zipkin](https://github.com/openzipkin/zipkin)
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
