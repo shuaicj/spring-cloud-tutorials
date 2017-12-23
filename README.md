@@ -176,6 +176,20 @@ Tutorials for learning Spring Cloud.
         - `$ java -jar tt61*/*server/target/*.jar`
     - Verify
         - Repeat the following `curl` and each service instance should say hello by turns.
+            - `$ curl http://localhost:8080/tt61-api-1/hello`
+            - `$ curl http://localhost:8080/tt61-api-2/hello`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt62-zuul-route** - Customize routes of [Spring Cloud Netflix Zuul](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt61*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
+        - `$ java -jar tt61*/*api-1/target/*.jar --server.port=8082 --hello.id=server-1-2`
+        - `$ java -jar tt61*/*api-2/target/*.jar --server.port=8083 --hello.id=server-2-1`
+        - `$ java -jar tt61*/*api-2/target/*.jar --server.port=8084 --hello.id=server-2-2`
+        - `$ java -jar tt62*/target/*.jar`
+    - Verify
+        - Repeat the following `curl` and each service instance should say hello by turns.
             - `$ curl http://localhost:8080/api1/hello`
             - `$ curl http://localhost:8080/api2/hello`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.

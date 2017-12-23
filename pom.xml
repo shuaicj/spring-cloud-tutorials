@@ -31,6 +31,7 @@
         <module>tt42-feign-hystrix-eureka</module>
         <module>tt51-turbine</module>
         <module>tt61-zuul</module>
+        <module>tt62-zuul-route</module>
     </modules>
 
     <properties>

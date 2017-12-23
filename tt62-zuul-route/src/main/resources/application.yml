@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tt61-zuul-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    tt61-api-1:
+      path: /api1/**
+      serviceId: tt61-api-1
+    tt61-api-2:
+      path: /api2/**
+      serviceId: tt61-api-2
+
