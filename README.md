@@ -147,7 +147,7 @@ Tutorials for learning Spring Cloud.
             - `$ curl http://localhost:8080/consume`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
-- **tt51-turbine** - [Spring Cloud Netflix Turbine](http://cloud.spring.io/spring-cloud-netflix/)
+- **tt51-turbine** - Simple usage of [Spring Cloud Netflix Turbine](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
         - `$ java -jar tt51*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
@@ -183,7 +183,7 @@ Tutorials for learning Spring Cloud.
         - Same as `tt51-turbine`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
-- **tt61-zuul** - [Spring Cloud Netflix Zuul](http://cloud.spring.io/spring-cloud-netflix/)
+- **tt61-zuul** - Simple usage of [Spring Cloud Netflix Zuul](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
         - `$ java -jar tt61*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
@@ -209,4 +209,23 @@ Tutorials for learning Spring Cloud.
         - Repeat the following `curl` and each service instance should say hello by turns.
             - `$ curl http://localhost:8080/api1/hello`
             - `$ curl http://localhost:8080/api2/hello`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt71-sleuth** - Simple usage of [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/)
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt71*/*api-1/target/*.jar`
+        - `$ java -jar tt71*/*api-2/target/*.jar`
+        - `$ java -jar tt71*/*api-3/target/*.jar`
+    - Verify
+        - `$ curl http://localhost:8081/hello?name=user`
+        - and you shoud see some log text like
+          ```
+          [tt71-api-1,aff79919529ce79f,4a8442d5d47112ba,false]
+          ```
+          which means
+          ```
+          [appname,traceId,spanId,exportable]
+          ```
+          See [doc](http://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/1.3.0.RELEASE/single/spring-cloud-sleuth.html#_features) for more details.
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.

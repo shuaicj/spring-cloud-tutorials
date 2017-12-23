@@ -33,6 +33,7 @@
         <module>tt52-turbine-rabbitmq</module>
         <module>tt61-zuul</module>
         <module>tt62-zuul-route</module>
+        <module>tt71-sleuth</module>
     </modules>
 
     <properties>
