@@ -34,6 +34,7 @@
         <module>tt61-zuul</module>
         <module>tt62-zuul-route</module>
         <module>tt71-sleuth</module>
+        <module>tt73-sleuth-zipkin</module>
     </modules>
 
     <properties>

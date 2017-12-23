@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: tt73-api-1
+  sleuth:
+    sampler:
+      percentage: 0.5 # more likely to be sampled, default 0.1
+  zipkin:
+    baseUrl: http://localhost:9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

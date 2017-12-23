@@ -229,3 +229,20 @@ Tutorials for learning Spring Cloud.
           ```
           See [doc](http://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/1.3.0.RELEASE/single/spring-cloud-sleuth.html#_features) for more details.
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt73-sleuth-zipkin** - [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/) with [Zipkin](https://github.com/openzipkin/zipkin)
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt73*/*server/target/*.jar`
+        - `$ java -jar tt73*/*api-1/target/*.jar`
+        - `$ java -jar tt73*/*api-2/target/*.jar`
+        - `$ java -jar tt73*/*api-3/target/*.jar`
+    - Verify
+        - Repeat `$ curl http://localhost:8081/hello?name=user` for several times.
+        - Open `http://localhost:9411` in browser and you should see `tt73-api-1` or the other two.
+            - Click `Find Traces` to check the service duration details.
+            - Click `Dependencies` you should see
+              ```
+              tt73-api-1  =>  tt73-api-2  => tt73-api-3
+              ```
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
