@@ -166,6 +166,23 @@ Tutorials for learning Spring Cloud.
             - `$ curl http://localhost:8084/consume`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
+- **tt52-turbine-rabbitmq** - [Spring Cloud Netflix Turbine](http://cloud.spring.io/spring-cloud-netflix/) with RabbitMQ
+    - Install and start [RabbitMQ](http://www.rabbitmq.com/). If using [Homebrew](https://brew.sh/) on Mac:
+        - `$ brew install rabbitmq`
+        - `$ rabbitmq-server`
+        > Now you can check if rabbitmq is running in browser `http://localhost:15672`.
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt52*/*api-1/target/*.jar --server.port=8081 --hello.id=server-1-1`
+        - `$ java -jar tt52*/*api-1/target/*.jar --server.port=8082 --hello.id=server-1-2`
+        - `$ java -jar tt52*/*api-2/target/*.jar --server.port=8083 --hello.id=server-2-1`
+        - `$ java -jar tt52*/*api-2/target/*.jar --server.port=8084 --hello.id=server-2-2`
+        - `$ java -jar tt52*/*server/target/*.jar`
+        - `$ java -jar tt23*/*server/target/*.jar --server.port=9090`
+    - Verify
+        - Same as `tt51-turbine`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
 - **tt61-zuul** - [Spring Cloud Netflix Zuul](http://cloud.spring.io/spring-cloud-netflix/)
     - Run
         - `$ java -jar tt11*/*server/target/*.jar`
