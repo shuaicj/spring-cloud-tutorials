@@ -36,6 +36,7 @@
         <module>tt71-sleuth</module>
         <module>tt72-sleuth-feign</module>
         <module>tt73-sleuth-zipkin</module>
+        <module>tt74-sleuth-zipkin-rabbitmq</module>
     </modules>
 
     <properties>

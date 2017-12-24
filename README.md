@@ -238,6 +238,7 @@ Tutorials for learning Spring Cloud.
         - `$ java -jar tt72*/*api-3/target/*.jar`
     - Verify
         - Same as `tt71-sleuth`
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
  
 - **tt73-sleuth-zipkin** - [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/) with [Zipkin](https://github.com/openzipkin/zipkin)
     - Run
@@ -254,4 +255,19 @@ Tutorials for learning Spring Cloud.
               ```
               tt73-api-1  =>  tt73-api-2  => tt73-api-3
               ```
+    > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
+ 
+- **tt74-sleuth-zipkin-rabbitmq** - [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-netflix/) with [Zipkin](https://github.com/openzipkin/zipkin), RabbitMQ
+    - Install and start [RabbitMQ](http://www.rabbitmq.com/). If using [Homebrew](https://brew.sh/) on Mac:
+        - `$ brew install rabbitmq`
+        - `$ rabbitmq-server`
+        > Now you can check if rabbitmq is running in browser `http://localhost:15672`.
+    - Run
+        - `$ java -jar tt11*/*server/target/*.jar`
+        - `$ java -jar tt74*/*server/target/*.jar`
+        - `$ java -jar tt74*/*api-1/target/*.jar`
+        - `$ java -jar tt74*/*api-2/target/*.jar`
+        - `$ java -jar tt74*/*api-3/target/*.jar`
+    - Verify
+        - Same as `tt73-sleuth-zipkin`
     > It takes one or two minutes for Eureka to take effect. You should wait this time to do the verify.
