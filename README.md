@@ -1,6 +1,7 @@
 # Spring Cloud Tutorials
 
-Tutorials for learning Spring Cloud.
+Tutorials for learning Spring Cloud. Each example shows the basic usage of one component of Spring Cloud.
+See also [shuaicj/spring-cloud-example](https://github.com/shuaicj/spring-cloud-example) for a complete demo.
 
 #### Compile
 `$ mvn clean package`
