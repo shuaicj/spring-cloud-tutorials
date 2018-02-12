@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tt22-hystrix-dashboard</artifactId>
+    <artifactId>tt23-hystrix-dashboard</artifactId>
     <packaging>pom</packaging>
 
     <modules>
