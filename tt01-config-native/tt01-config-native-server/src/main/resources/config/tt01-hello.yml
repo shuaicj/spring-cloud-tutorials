@@ -3,3 +3,6 @@ server:
 
 hello:
   message: Hello, I'm tt01.
+  chars: A,B,C
+  dict: "{key1:'1',key2:'2'}"
+
